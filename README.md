@@ -1,24 +1,20 @@
-# mysql-promise
+# mysql2-promise-continued
 
 Small promises wrapper for [`mysql2`](https://github.com/sidorares/node-mysql2), 
 it's forked and compatible with [`mysql-promise`](https://github.com/martinj/node-mysql-promise).
-
-[![build status](https://travis-ci.org/namshi/node-mysql2-promise.svg)](http://travis-ci.org/namshi/node-mysql2-promise)
-[![NPM](https://img.shields.io/npm/v/mysql2-promise.svg)](https://www.npmjs.com/package/mysql2-promise)
-[![NPM](https://img.shields.io/npm/dm/mysql2-promise.svg)](https://www.npmjs.com/package/mysql2-promise)
 
 ## Installation
 
 This module is installed via npm:
 
 ``` bash
-$ npm install mysql2-promise --save
+$ npm install mysql2-promise-continued --save
 ```
 
 ## Example Usage of query
 
 ``` js
-var db = require('mysql2-promise')();
+var db = require('mysql2-promise-continued')();
 
 db.configure({
 	"host": "localhost",
@@ -34,7 +30,7 @@ db.query('UPDATE foo SET key = ?', ['value']).then(function () {
 });
 
 //using multiple databases, giving it a name 'second-db' so it can be retrieved inside other modules/files.
-var db2 = require('mysql-promise')('second-db');
+var db2 = require('mysql2-promise-continued')('second-db');
 
 db2.configure({
 	"host": "localhost",
@@ -55,7 +51,7 @@ db2.query('SELECT * FROM users').spread(function (users) {
 `execute()` function is similar to `query` but it use [prepared-statements](https://github.com/sidorares/node-mysql2#prepared-statements).
 
 ``` js
-var db = require('mysql2-promise')();
+var db = require('mysql2-promise-continued')();
 
 db.configure({
 	"host": "localhost",
@@ -73,7 +69,7 @@ db.execute('SELECT * FROM users WHERE LIMIT = ?', [10]).spread(function (users) 
 ## Example usage of [namedPlaceholders]((https://github.com/sidorares/node-mysql2#named-placeholders))
 
 ``` js
-var db = require('mysql2-promise')();
+var db = require('mysql2-promise-continued')();
 
 db.configure({
 	"host": "localhost",
